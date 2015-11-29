@@ -13,6 +13,7 @@ private:
      double velocity;
      double theta;
 public:
+     sensors(double x=0,double y=0,double z=0,double velocity=0,double theta=0):x(x),y(y),z(z),velocity(velocity),theta(theta){}
      double normaldistribution(){
      default_random_engine generator;
      normal_distribution<double> distribution(0.0,1.0);
@@ -37,4 +38,14 @@ public:
      double Altimeter(){
      this->z= this->z+normaldistribution();
      }
+     friend ostream& operator <<(ostream& s, sensors c){
+     return s << c.x<<" " <<c.y<< " "<< c.z<<" " <<c.velocity<<" " <<c.theta<<" " ;
+     }
 };
+
+/*int main(){
+    sensors c(1,2,3);
+    c.radar();
+cout<< c;
+}
+*/
