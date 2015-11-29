@@ -5,25 +5,25 @@ using namespace std;
 
 class Robot{
 private:
-    double x;
-    double y;
-    double z;
-    double t;
-    double velocity;
-    double theta;
+    int x;
+    int y;
+    int z;
+    int t;
+    int velocity;
+    int theta;
 public:
-    Robot(double x=0,double y=0,double z=0,double velocity=0,double theta=0):x(x),y(y),z(z),velocity(velocity),theta(theta){}
+    Robot(int x=0,int y=0,int z=0,int velocity=0,int theta=0):x(x),y(y),z(z),velocity(velocity),theta(theta){}
 
-    void setlocation(double x, double y, double z=0){this->x=x;this->y=y;this->z=z;}
+    void setlocation(int x, int y, int z=0){this->x=x;this->y=y;this->z=z;}
 
-    void updatelocation(double& x, double& y, double v, double theta)
+    void updatelocation(int& x, int& y, int v, int theta)
     {
         x=x+v*cos(theta);
         y=y+v*sin(theta);
     }
 
-      double* getlocation(){
-        double x[3] ;
+      int* getlocation(){
+        int x[3] ;
         x[0]=this->x;
         x[1]=this->y;
         x[2]=this->z;
@@ -39,7 +39,7 @@ public:
 int main(){
 Robot car(2.0,1.0,0);
 car.setlocation(1.0,2.0,1.0);
-double *location=car.getlocation();
+int *location=car.getlocation();
 cout<< "x="<<location[0]<<" "<<"y="<<location[1]<<" "<<"z="<<location[2];
 return 0;
 }

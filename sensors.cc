@@ -6,36 +6,36 @@ using namespace std;
 
 class sensors{
 private:
-     double x;
-     double y;
-     double z;
-     double t;
-     double velocity;
-     double theta;
+     int x;
+     int y;
+     int z;
+     int t;
+     int velocity;
+     int theta;
 public:
-     sensors(double x=0,double y=0,double z=0,double velocity=0,double theta=0):x(x),y(y),z(z),velocity(velocity),theta(theta){}
+     sensors(int x=0,int y=0,int z=0,int velocity=0,int theta=0):x(x),y(y),z(z),velocity(velocity),theta(theta){}
      double normaldistribution(){
      default_random_engine generator;
      normal_distribution<double> distribution(0.0,1.0);
      return distribution(generator);
      }
-     double radar(){
+     int radar(){
      this->z= this->z+normaldistribution();
      }
-     double gps(){
+     int gps(){
      this->x= this->x+normaldistribution();
      this->y= this->y+normaldistribution();
      }
-     double SONAR(){
+     int SONAR(){
      this->z= this->z+normaldistribution();
      }
-     double compass(){
+     int compass(){
      this->theta= this->theta+normaldistribution();
      }
-     double accelerometer(){
+     int accelerometer(){
      this->velocity= this->velocity+normaldistribution();
      }
-     double Altimeter(){
+     int Altimeter(){
      this->z= this->z+normaldistribution();
      }
      friend ostream& operator <<(ostream& s, sensors c){

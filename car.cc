@@ -6,7 +6,7 @@ using namespace std;
 
 class car : public Robot{
 private:
-    double velocity;
+    int velocity;
 public:
     car():Robot(){
     this->velocity=rand()%40+40;
