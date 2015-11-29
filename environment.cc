@@ -45,6 +45,9 @@ public:
       int getdepth(){
       return this->ocean_depth;
       }
+      int getheight(){
+      return this->air_height;
+      }
 };
 
 /*int main(){

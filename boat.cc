@@ -4,25 +4,25 @@
 #include "environment.cc"
 using namespace std;
 
-class submarine : public Robot{
+
+class boat : public Robot{
 private:
     int state;
     int velocity;
-    int submarine_depth_velocity;
-    int submarine_depth;
+    int boat_depth;
 public:
-    submarine():Robot(){
-    this->velocity=rand()%40+10;
-    this->submarine_depth_velocity=rand()%-10+20;
+    boat():Robot(){
+    this->velocity=rand()%30+30;
     }
     int ifcrash(){
         environment ocean(50000,50000,10000,20000);
         int state=0;
-        if(submarine_depth>=ocean.getdepth()){
-        cout<<"submarine crash"<<endl;
+        if(boat_depth>=0){
+        cout<<"boat crash"<<endl;
         state=1;
         return state;
     }
     return state;
     }
 };
+
