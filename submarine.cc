@@ -20,7 +20,7 @@ public:
     {
         int input_x=get_x()+this->velocity*cos(this->theta);
         int input_y=get_y()+this->velocity*sin(this->theta);
-        int input_z=get_z()-this->submarine_depth_velocity;
+        int input_z=get_z()+this->submarine_depth_velocity;
         set_x(input_x);
         set_y(input_y);
         set_z(input_z);
