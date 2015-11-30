@@ -18,8 +18,8 @@ public:
 
      void update_boat_location()
     {
-        int input_x=get_x()+this->velocity*this->theta;
-        int input_y=get_y()+this->velocity*this->theta;
+        int input_x=get_x()+this->velocity*sin(this->theta);
+        int input_y=get_y()+this->velocity*cos(this->theta);
         set_x(input_x);
         set_y(input_y);
     }

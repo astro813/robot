@@ -18,8 +18,8 @@ public:
 
     void update_plane_location()
     {
-        int input_x=get_x()+this->velocity*this->theta;
-        int input_y=get_y()+this->velocity*this->theta;
+        int input_x=get_x()+this->velocity*sin(this->theta);
+        int input_y=get_y()+this->velocity*cos(this->theta);
         int input_z=get_z()+this->plane_height_velocity;
         set_x(input_x);
         set_y(input_y);

@@ -42,8 +42,8 @@ public:
 
     void updatelocation(int v, int theta)
     {
-        this->x=this->x+v*cos(theta);
-        this->y=this->y+v*sin(theta);
+        this->x=this->x+ velocity*cos(theta);
+        this->y=this->y+ velocity*sin(theta);
     }
 
       int* getlocation(){
