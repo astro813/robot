@@ -7,22 +7,35 @@ using namespace std;
 class submarine : public Robot{
 private:
     int state;
-    int velocity;
     int submarine_depth_velocity;
-    int submarine_depth;
 public:
-    submarine():Robot(){
+    submarine(int x=0,int y=0,int z=0,int velocity=0,int theta=0)
+    {
+    Robot(x,y,z,velocity,theta);
     this->velocity=rand()%40+10;
     this->submarine_depth_velocity=rand()%-10+20;
     }
-    int ifcrash(){
+
+    void update_submarine_location()
+    {
+        int input_x=get_x()+this->velocity*this->theta;
+        int input_y=get_y()+this->velocity*this->theta;
+        int input_z=get_z()-this->submarine_depth_velocity;
+        set_x(input_x);
+        set_y(input_y);
+        set_z(input_z);
+    }
+
+    int ifcrash()
+    {
         environment ocean(50000,50000,10000,20000);
         int state=0;
-        if(submarine_depth>=ocean.getdepth()){
+        if(get_z()>=ocean.getdepth())
+        {
         cout<<"submarine crash"<<endl;
         state=1;
         return state;
-    }
+        }
     return state;
     }
 };

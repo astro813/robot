@@ -6,9 +6,20 @@ using namespace std;
 
 class car : public Robot{
 private:
-    int velocity;
+      int state;
 public:
-    car():Robot(){
+    car(int x=0,int y=0,int z=0,int velocity=0,int theta=0)
+    {
+    Robot(x,y,z,velocity,theta);
     this->velocity=rand()%40+40;
     }
+
+      void update_car_location()
+    {
+        int input_x=get_x()+this->velocity*this->theta;
+        int input_y=get_y()+this->velocity*this->theta;
+        set_x(input_x);
+        set_y(input_y);
+    }
+
 };
