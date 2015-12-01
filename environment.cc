@@ -4,13 +4,15 @@ using namespace std;
 
 class environment{
 private:
-       int land_length;
+       int land_length;// should be double (size of world in x and y)
        int land_width;
        int ocean_length;
        int ocean_width;
        int ocean_depth;
        int air_height;
        int ***envir;
+       // need a 2d or 3d grid of land, water, (and if 3d, air)
+       //environment needs a list of robots...
 public:
       environment(int land_length,int land_width, int ocean_length,int ocean_width,int ocean_depth,int air_height):land_length(land_length),
       land_width(land_width),ocean_length(ocean_length),ocean_width(ocean_width),ocean_depth(ocean_depth),air_height(air_height){

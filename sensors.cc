@@ -4,6 +4,17 @@ using namespace std;
 #include <random>
 #include "robot.cc"
 //need head
+#if 0
+class sensor {
+private:
+     robot& r;
+public:
+     sensor(robot& r) : r(r) {}
+     
+     // r.realPos.x
+     
+};
+#endif
 
 class sensors: public Robot{
 private:
@@ -45,7 +56,14 @@ public:
      return s << c.get_x()<<" " <<c.get_y()<< " "<< c.get_z()<<" " <<c.velocity<<" " <<c.theta<<" " ;
      }
 };
+#if 0
+class GPS : public sensor {
+public:
+     GPS(robot& r) : sensor(r) {}
+     Vector position() const {}
+};
 
+#endif
 /*int main(){
     sensors c(1,2,3);
     c.radar();
