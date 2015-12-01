@@ -80,8 +80,3 @@ public:
       return this->air_height;
       }
 };
-
-/*int main(){
-
-}
-*/
