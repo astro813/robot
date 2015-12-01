@@ -2,15 +2,20 @@
 #include <cmath>
 using namespace std;
 #include <random>
+#include <vector>
 
 class Robot{
 private:
-    int x;
-    int y;
-    int z;
-    int t;
-protected:int velocity;
-          int theta;
+     double x;
+     double y;
+     double z;
+     vector<double> realPos;
+     vector<double> believePos;
+     vector<double> realVelocity;
+     vector<double> believeVelocity;
+protected:
+    int velocity;
+    int theta;
 public:
     Robot(int x=0,int y=0,int z=0, int velocity=0, int theta=0):x(x),y(y),z(z),velocity(velocity),theta(theta){}
 
@@ -47,12 +52,12 @@ public:
     }
 
       int* getlocation(){
-        int x[3] ;
-        x[0]=this->x;
-        x[1]=this->y;
-        x[2]=this->z;
+        int location[3] ;
+        location[0]=this->x;
+        location[1]=this->y;
+        location[2]=this->z;
         //cout <<*(x+1)<<"w";
-        return x;
+        return location;
 
         }
      friend ostream& operator <<(ostream& s, Robot c){
