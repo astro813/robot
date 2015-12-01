@@ -3,6 +3,7 @@
 using namespace std;
 #include <random>
 #include "robot.cc"
+#include "environment.cc"
 
 class car : public Robot{
 private:
@@ -22,4 +23,10 @@ public:
         set_y(input_y);
     }
 
+    void ifborder()
+    {
+    environment land_ocean(50000,50000,10000,20000);
+    land_ocean.create_land_ocean();
+
+    }
 };
