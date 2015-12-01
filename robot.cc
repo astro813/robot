@@ -5,10 +5,14 @@ using namespace std;
 
 class Robot{
 private:
-    int x;
+    //Vector realPos; // recommend class Vector or point for position (x,y,z)
+    //Vector believePos; // where the robot "thinks" it is
+    //Vector realVelocity; //(x,y,z) speed
+    //Vector believeVelocity; // this is the speed the robot "thinks"
+    int x; // recommend double for coords
     int y;
     int z;
-    int t;
+    int t; // time belongs in environment
 protected:int velocity;
           int theta;
 public:
