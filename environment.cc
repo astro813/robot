@@ -23,6 +23,15 @@ public:
                     environment3D[i][j].resize(DEPTH);
             }
         }
+       for (int i = 0; i < HEIGHT; i++)
+        {
+            for (int j = 0; j < WIDTH; j++)
+                {
+                   for (int k = 0; k < DEPTH; k++){
+                    environment3D[i][j][k]=0;
+                   }
+            }
+        }
       }
 
       int getdwidth(){
@@ -42,7 +51,8 @@ public:
 
 /*
 int main(){
-environment c(1,2,2);
-cout<<c.getheight();
+environment c(3,3,4);
+cout<<c.getheight()<<endl;
+cout<<c.getenvironment(1,2,2);
 }
 */
