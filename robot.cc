@@ -6,7 +6,7 @@ using namespace std;
 
 class Robot{
 private:
-<<<<<<< HEAD
+
      double x;
      double y;
      double z;
@@ -17,18 +17,6 @@ private:
 protected:
     int velocity;
     int theta;
-=======
-    //Vector realPos; // recommend class Vector or point for position (x,y,z)
-    //Vector believePos; // where the robot "thinks" it is
-    //Vector realVelocity; //(x,y,z) speed
-    //Vector believeVelocity; // this is the speed the robot "thinks"
-    int x; // recommend double for coords
-    int y;
-    int z;
-    int t; // time belongs in environment
-protected:int velocity;
-          int theta;
->>>>>>> origin/master
 public:
     Robot(int x=0,int y=0,int z=0, int velocity=0, int theta=0):x(x),y(y),z(z),velocity(velocity),theta(theta){}
 
