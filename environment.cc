@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 class environment{
@@ -33,6 +34,32 @@ public:
             }
         }
       }
+    // creat a 3D module with value 0
+
+    int readintext(){
+        ifstream ifs;
+        ifs.open("datefile.txt");
+        if(ifs == NULL)
+            return;
+        vector< vector<int> > vec;
+        vector<int> vec_tmp;
+        int tmp;
+        int i = 0;
+        while (ifs.good())
+        {
+            ++i;
+            ifs>>tmp;
+            vec_tmp.push_back(tmp);
+            if(i == 3)
+            {
+                i = 0;
+                vec.push_back(vec_tmp);
+                vec_tmp.clear();
+            }
+        }
+       
+    }
+    
 
       int getdwidth(){
       return this->WIDTH;
