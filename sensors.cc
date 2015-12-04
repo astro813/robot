@@ -12,7 +12,7 @@ public:
      sensor(robot& r) : r(r) {}
      
      // r.realPos.x
-     
+                                                    
 };
 #endif
 
