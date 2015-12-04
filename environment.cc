@@ -59,6 +59,7 @@ public:
         }
        
     }
+    //get the data from txt file
     
 
       int getdwidth(){
